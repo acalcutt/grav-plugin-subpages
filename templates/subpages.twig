@@ -1,0 +1,26 @@
+{% if subpages|length > 0 or parent %}
+    {% if parent %}
+      <ul class="subpages-list">
+           <li><a href="{{ parent.url }}"> [..] </a></li>
+        {% if subpages|length > 0 %}
+             {% for subpage in subpages %}
+                <li><a href="{{ subpage.url }}">{{ subpage.title }}</a></li>
+             {% endfor %}
+        {% endif %}
+      </ul>
+     {% else %}
+    {% if subpages_config.style == 'ul' %}
+      <ul class="subpages-list">
+          {% for subpage in subpages %}
+          <li><a href="{{ subpage.url }}">{{ subpage.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <ol class="subpages-list">
+          {% for subpage in subpages %}
+          <li><a href="{{ subpage.url }}">{{ subpage.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
+     {% endif %}
+{% endif %}

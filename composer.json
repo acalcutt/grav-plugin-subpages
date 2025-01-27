@@ -1,0 +1,26 @@
+{
+  "name": "acalcutt/grav-plugin-subpages",
+  "type": "grav-plugin",
+  "description": "A Grav plugin to display subpages.",
+  "keywords": [
+    "grav",
+    "plugin",
+    "subpages",
+    "navigation"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrew Calcutt",
+      "email": "acalcutt@techidiots.net"
+    }
+  ],
+  "require": {
+    "php": ">=7.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Grav\\Plugin\\": "./"
+    }
+  }
+}

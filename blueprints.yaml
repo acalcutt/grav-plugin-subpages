@@ -1,0 +1,24 @@
+name: Subpages
+version: 1.0.0
+description: Displays a list of direct sub-pages of the current page.
+icon: list-alt
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+    style:
+      type: select
+      label: Style
+      description: Select the display style of the list
+      default: ul
+      options:
+        ul: Unordered List
+        ol: Ordered List
