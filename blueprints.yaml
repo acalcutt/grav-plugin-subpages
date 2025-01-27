@@ -2,6 +2,10 @@ name: Subpages
 version: 1.0.0
 description: Displays a list of direct sub-pages of the current page.
 icon: list-alt
+author:
+  name: 'Andrew Calcutt'
+  email: 'acalcutt@techidiots.net'
+homepage: 'https://github.com/acalcutt/grav-plugin-subpages'
 
 form:
   validation: strict
