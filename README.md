@@ -23,15 +23,21 @@ The plugin works by:
 3.  **Fetching Subpages:** When `onTwigSiteVariables` fires, the plugin retrieves the current page object, then it uses the function `getVisibleSubpages` to get the subpages that are both visible and routable.
 4.  **Fetching Parent:** When `onTwigSiteVariables` fires, the plugin retrieves the current page object, then it uses the function `getParentPage` to get the current page's parent (or null if it doesn't have one).
 5.  **Passing Data to Twig:** The plugin makes this data available to your Twig templates through the `subpages`, `parent` and `subpages_config` variables.
-6.  **Rendering the Subpage List:** In your Twig template, you include `subpages.twig`, which loops through the `subpages` variable and renders the list of links. The style of list will depend on the `subpages_config.style`.
+6.  **Rendering the Subpage List:** In your Twig template, you include `subpages.html.twig`, which loops through the `subpages` variable and renders the list of links. The style of list will depend on the `subpages_config.style`.
 
 ## Installation
+
+### With Grav Package Manager (GPM)
+
+1.  Navigate to the `/admin/plugins` page.
+2.  Search for "Subpages" and click the install button.
 
 ### With Composer (Recommended)
 
 ```bash
 composer require acalcutt/grav-plugin-subpages
 ```
+**Composer is recommended because it is the standard way to manage dependencies in PHP and allows for more robust version management.**
 
 ### Manually
 
@@ -52,44 +58,48 @@ composer require acalcutt/grav-plugin-subpages
 1.  **Add the Twig Include:** In the Twig template where you want to display the subpage list, add the following include:
 
     ```twig
-    {% include 'subpages.twig' %}
+    {% if config.plugins.subpages.enabled %}
+       {% include 'subpages.html.twig' %}
+     {% endif %}
     ```
 
     *   This could be in your theme's `base.html.twig` file (or `default.html.twig` if you don't have a `base.html.twig`), or in a specific page's Twig template.
-    *   **Important:** The plugin adds the `subpages`, `parent`, and `subpages_config` variables to your Twig environment so that the `subpages.twig` template can access it.
+    *   **Important:** The plugin adds the `subpages`, `parent`, and `subpages_config` variables to your Twig environment so that the `subpages.html.twig` template can access it.
 
 ## Example
 
 Let's say you have a page structure like this:
 
 ```
-/parent-page/
-  /subpage-1/
-  /subpage-2/
-  /subpage-3/  (hidden)
+/01.parent-page/
+  /01.subpage-1/
+  /02.subpage-2/
+  /03.subpage-3/  (hidden)
 ```
 
-If you navigate to `/parent-page/` and have the plugin enabled, the output will be something like:
+If you navigate to `/01.parent-page/` and have the plugin enabled, the output will be something like this:
+
+![Subpages Plugin Output](https://i.gyazo.com/5e7a27a31266a364716658d0420e38c9.png)
 
 ```html
   <ul class="subpages-list">
     <li><a href="[..]"> [..] </a></li>
-    <li><a href="/parent-page/subpage-1">Subpage 1</a></li>
-    <li><a href="/parent-page/subpage-2">Subpage 2</a></li>
+    <li><a href="/01.parent-page/01.subpage-1">Subpage 1</a></li>
+    <li><a href="/01.parent-page/02.subpage-2">Subpage 2</a></li>
   </ul>
 ```
 If you are in a root page, the output will look like this
 ```html
   <ul class="subpages-list">
-    <li><a href="/parent-page/subpage-1">Subpage 1</a></li>
-    <li><a href="/parent-page/subpage-2">Subpage 2</a></li>
+    <li><a href="/01.parent-page/01.subpage-1">Subpage 1</a></li>
+    <li><a href="/01.parent-page/02.subpage-2">Subpage 2</a></li>
   </ul>
 ```
 Or if you configured the style to `ol`:
 ```html
   <ol class="subpages-list">
-    <li><a href="/parent-page/subpage-1">Subpage 1</a></li>
-    <li><a href="/parent-page/subpage-2">Subpage 2</a></li>
+    <li><a href="/01.parent-page/01.subpage-1">Subpage 1</a></li>
+    <li><a href="/01.parent-page/02.subpage-2">Subpage 2</a></li>
   </ol>
 ```
 
@@ -105,11 +115,27 @@ The plugin has the following configuration options under the "Subpages" section 
 ## Customization
 
 *   **CSS:** Customize the appearance of the list by adding styles to the `.subpages-list` class in your theme's CSS file.
-*   **Template:** You can modify the `subpages.twig` template to change the HTML structure of the list to fit your needs.
+*   **Template:** You can modify the `subpages.html.twig` template to change the HTML structure of the list to fit your needs.
 
 ## Admin Preview Limitation
 
 *   The subpages list may not be fully visible in the admin preview. This is expected behavior, as the admin preview is not designed to render all aspects of plugins or themes. It is meant for previewing content, not elements. The most important testing should always be done on the front-end of the website.
+
+## Changelog
+
+### v1.0.0
+* Initial release
+
+### v1.0.1
+* Changed "Back to Parent" link to `[..]`.
+
+### v1.0.2
+* Changed template name to `subpages.html.twig`
+* Removed redundant checks for plugin enabled in `subpages.php`
+* Added GPM installation to the `README.md` file
+* Added conditional include to the `README.md` file
+* Added numbered prefix to the example folder structure in the `README.md` file
+* Added screenshot to the `README.md` file
 
 ## License
 
