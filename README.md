@@ -85,29 +85,6 @@ If you are using the ordered list style, the output will look like this:
 
 ![Subpages Plugin Ordered List](subpages_ol.png)
 
-
-```html
-  <ul class="subpages-list">
-    <li><a href="[..]"> [..] </a></li>
-    <li><a href="/01.parent-page/01.subpage-1">Subpage 1</a></li>
-    <li><a href="/01.parent-page/02.subpage-2">Subpage 2</a></li>
-  </ul>
-```
-If you are in a root page, the output will look like this
-```html
-  <ul class="subpages-list">
-    <li><a href="/01.parent-page/01.subpage-1">Subpage 1</a></li>
-    <li><a href="/01.parent-page/02.subpage-2">Subpage 2</a></li>
-  </ul>
-```
-Or if you configured the style to `ol`:
-```html
-  <ol class="subpages-list">
-    <li><a href="/01.parent-page/01.subpage-1">Subpage 1</a></li>
-    <li><a href="/01.parent-page/02.subpage-2">Subpage 2</a></li>
-  </ol>
-```
-
 *   Note that `subpage-3` is not listed as it is hidden (not visible)
 
 ## Configuration
