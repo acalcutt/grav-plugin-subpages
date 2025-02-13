@@ -86,8 +86,8 @@ The plugin has the following configuration options under the "Subpages" section 
 *   **Plugin Status (enabled):** Enable or disable the plugin.
 *   **Style:** Allows you to chose between `ul` for an unordered list or `ol` for an ordered list.
 *   **Show Previous Page Link (enabled):** Enable or disable the [..] Previous Page Link at the top of the list. Disabling this option makes the munu look like this.  
-    ![Subpages Plugin Unordered List](screenshots/subpages_ol_no-root.png)  
     ![Subpages Plugin Unordered List](screenshots/subpages_ul_no-root.png)  
+    ![Subpages Plugin Ordered List](screenshots/subpages_ol_no-root.png)  
 
 ## Customization
 
