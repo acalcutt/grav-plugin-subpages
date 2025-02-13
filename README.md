@@ -93,6 +93,7 @@ The plugin has the following configuration options under the "Subpages" section 
 
 *   **Plugin Status (enabled):** Enable or disable the plugin.
 *   **Style:** Allows you to chose between `ul` for an unordered list or `ol` for an ordered list.
+*   **Show Previous Page Link (enabled):** Enable or disable the [..] Previous Page Link at the top of the list.
 
 ## Customization
 
