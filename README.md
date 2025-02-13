@@ -51,8 +51,8 @@ The plugin works by:
 
     ```twig
     {% if config.plugins.subpages.enabled %}
-       {% include 'subpages.html.twig' %}
-     {% endif %}
+      {% include 'subpages.html.twig' %}
+    {% endif %}
     ```
 
     *   This could be in your theme's `base.html.twig` file (or `default.html.twig` if you don't have a `base.html.twig`), or in a specific page's Twig template.
