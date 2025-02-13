@@ -25,7 +25,7 @@ class SubpagesPlugin extends Plugin
     public function onPluginsInitialized()
     {
         $this->enable([
-            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
+           'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0]
         ]);
     }
 
@@ -40,7 +40,7 @@ class SubpagesPlugin extends Plugin
         // Get visible subpages
         $subpages = $this->getVisibleSubpages($page);
 
-        $parent = $this->getParentPage($page);
+        $parent = $page->parent();
 
         $this->grav['twig']->twig_vars['subpages'] = $subpages;
         $this->grav['twig']->twig_vars['parent'] = $parent;
@@ -69,18 +69,5 @@ class SubpagesPlugin extends Plugin
          }
 
          return $subpages;
-    }
-     /**
-     * Get the parent page, if it exists. Return null if it does not
-     * @param Page $page
-     *
-     * @return Page|null
-     */
-    private function getParentPage(Page $page)
-    {
-        if( $page->parent() !== null && $page->route() !== '/' ){
-             return $page->parent();
-        }
-        return null;
     }
 }
