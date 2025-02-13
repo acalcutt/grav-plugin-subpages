@@ -77,9 +77,14 @@ Let's say you have a page structure like this:
   /03.subpage-3/  (hidden)
 ```
 
-If you navigate to `/01.parent-page/` and have the plugin enabled, the output will be something like this:
+If you navigate to `/01.parent-page/` and have the plugin enabled with a unordered list style, the output will be something like this:
 
-![Subpages Plugin Output](https://i.gyazo.com/5e7a27a31266a364716658d0420e38c9.png)
+![Subpages Plugin Unordered List](subpages_ul.png)
+
+If you are using the ordered list style, the output will look like this:
+
+![Subpages Plugin Ordered List](subpages_ol.png)
+
 
 ```html
   <ul class="subpages-list">
