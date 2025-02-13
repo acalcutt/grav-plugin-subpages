@@ -63,7 +63,7 @@ The plugin works by:
 Let's say you have a page structure like this:
 
 ```
-/01.parent-page/
+/parent-page/
   /01.subpage-1/
   /02.subpage-2/
   /03.subpage-3/  (hidden)
