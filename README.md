@@ -69,7 +69,7 @@ Let's say you have a page structure like this:
   /03.subpage-3/  (hidden)
 ```
 
-If you navigate to `/01.parent-page/` and have the plugin enabled with a unordered list style, the output will be something like this:
+If you navigate to `/parent-page/` and have the plugin enabled with a unordered list style, the output will be something like this:
 
 ![Subpages Plugin Unordered List](screenshots/subpages_ul.png)
 
