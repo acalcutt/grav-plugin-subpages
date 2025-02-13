@@ -1,10 +1,13 @@
 # v1.0.3
+## 02/12/2025
+
 1. [](#fix)
     * Fixed ordered list not working
 2. [](#new)
     * Added option to show or hide the previous page link
 
 # v1.0.2
+## 01/28/2025
 1. [](#improved)
     * Changed template name to `subpages.html.twig`
 2. [](#improved)
