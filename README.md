@@ -8,10 +8,9 @@ This Grav plugin displays a list of direct, visible sub-pages for the current pa
 
 *   **Direct Subpages:** Displays only the immediate children of the current page.
 *   **Visibility Check:** Only shows pages that are explicitly visible (not hidden).
-*    **Routable Check:** Only shows pages that are routable.
+*   **Routable Check:** Only shows pages that are routable.
 *   **Configurable List Style:** Allows you to choose between `ul` (unordered list) and `ol` (ordered list) in the plugin's configuration.
 *   **Easy Integration:** Uses a simple Twig include to display the list on your pages.
-*   **Admin Preview Support:** The plugin correctly loads template paths in the admin preview. Although the subpages won't be shown on the admin preview, the admin page will not error anymore.
 *   **"Back to Parent" Link:** Adds a navigation link to the parent page (if not a root page), using `[..]` notation, for a concise and clean way to go back one level.
 
 ## How It Works
@@ -29,15 +28,8 @@ The plugin works by:
 
 ### With Grav Package Manager (GPM)
 
-1.  Navigate to the `/admin/plugins` page.
+1.  Navigate to the `/admin/plugins` page in your browser.
 2.  Search for "Subpages" and click the install button.
-
-### With Composer (Recommended)
-
-```bash
-composer require acalcutt/grav-plugin-subpages
-```
-**Composer is recommended because it is the standard way to manage dependencies in PHP and allows for more robust version management.**
 
 ### Manually
 
@@ -79,11 +71,11 @@ Let's say you have a page structure like this:
 
 If you navigate to `/01.parent-page/` and have the plugin enabled with a unordered list style, the output will be something like this:
 
-![Subpages Plugin Unordered List](subpages_ul.png)
+![Subpages Plugin Unordered List](screenshots/subpages_ul.png)
 
 If you are using the ordered list style, the output will look like this:
 
-![Subpages Plugin Ordered List](subpages_ol.png)
+![Subpages Plugin Ordered List](screenshots/subpages_ol.png)
 
 *   Note that `subpage-3` is not listed as it is hidden (not visible)
 
@@ -93,7 +85,9 @@ The plugin has the following configuration options under the "Subpages" section 
 
 *   **Plugin Status (enabled):** Enable or disable the plugin.
 *   **Style:** Allows you to chose between `ul` for an unordered list or `ol` for an ordered list.
-*   **Show Previous Page Link (enabled):** Enable or disable the [..] Previous Page Link at the top of the list.
+*   **Show Previous Page Link (enabled):** Enable or disable the [..] Previous Page Link at the top of the list. Disabling this option makes the munu look like this.
+  *...![Subpages Plugin Unordered List](screenshots/subpages_ol_no-root.png)
+  *...![Subpages Plugin Unordered List](screenshots/subpages_ul_no-root.png)
 
 ## Customization
 
@@ -103,22 +97,6 @@ The plugin has the following configuration options under the "Subpages" section 
 ## Admin Preview Limitation
 
 *   The subpages list may not be fully visible in the admin preview. This is expected behavior, as the admin preview is not designed to render all aspects of plugins or themes. It is meant for previewing content, not elements. The most important testing should always be done on the front-end of the website.
-
-## Changelog
-
-### v1.0.0
-* Initial release
-
-### v1.0.1
-* Changed "Back to Parent" link to `[..]`.
-
-### v1.0.2
-* Changed template name to `subpages.html.twig`
-* Removed redundant checks for plugin enabled in `subpages.php`
-* Added GPM installation to the `README.md` file
-* Added conditional include to the `README.md` file
-* Added numbered prefix to the example folder structure in the `README.md` file
-* Added screenshot to the `README.md` file
 
 ## License
 
